@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1C2022</color>
+    <color name="colorPrimaryDark">#1C2022</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="whatsAppGrey">#2E363A</color>
+    <color name="whatsAppGreen">#4AC959</color>
+</resources>

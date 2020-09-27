@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/whatsapp_dark_mode_wallpaper">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/whatsAppGrey"
+        app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WhatsApp Direct"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_marginLeft="25dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/toolbar"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="5781-whatsapp-default-state-animation.json"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:padding="5dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/infoTV"
+        android:layout_below="@id/animation_view"
+        android:layout_marginTop="-10dp"
+        android:textSize="16dp"
+        android:text="Now send WhatsApp messages without saving numbers to your phone. Enter the receiver's phone number below and send messages. To get redirected to WhatsApp ChatField with an empty message, click on the Redirect button after entering the phone number!"
+        android:textColor="@color/whatsAppGreen"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_below="@id/infoTV"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:id="@+id/linearLayout">
+
+        <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_weight="35"
+            android:backgroundTint="#fff"
+            android:padding="5dp"
+            app:ccp_countryPreference="IN"
+            app:ccp_defaultNameCode="IN"
+            app:ccp_enablePhoneAutoFormatter="false"
+            app:ccp_textColor="#fff" />
+
+        <EditText
+            android:id="@+id/phoneNumberET"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="65"
+            android:hint="Enter Phone No."
+            android:inputType="phone"
+            android:maxLength="10"
+            android:padding="5dp"
+            android:gravity="center"
+            android:focusedByDefault="false"
+            android:cursorVisible="true"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:background="@color/whatsAppGrey"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout1">
+
+        <EditText
+            android:id="@+id/messageET"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:hint="Type Message"
+            android:gravity="center"
+            android:inputType="text"
+            android:padding="5dp"
+            android:focusedByDefault="false"
+            android:cursorVisible="true"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:background="@color/whatsAppGrey"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/linearLayout1"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:weightSum="100"
+        android:paddingHorizontal="20dp">
+
+        <Button
+            android:id="@+id/redirectBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Redirect"
+            android:textSize="12dp"
+            android:backgroundTint="@color/whatsAppGreen"
+            android:layout_marginTop="15dp"
+            android:layout_weight="50"
+            android:layout_marginRight="10dp"/>
+        <Button
+            android:id="@+id/sendMessageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="send message"
+            android:textSize="12dp"
+            android:backgroundTint="@color/whatsAppGreen"
+            android:layout_marginTop="15dp"
+            android:layout_weight="50"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
